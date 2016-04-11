@@ -1,3 +1,14 @@
 To run this example, run the following command:
 
 $ mvn clean install exec:java
+
+Here's an example output:
+
+trironkk.personal.ExampleAspect.before
+trironkk.personal.ExampleAspect.around BEFORE
+Arguments : [42, Hello world!, 3.14]
+arg1: 42
+arg2: Hello world!
+arg3: 3.14
+trironkk.personal.ExampleAspect.around AFTER
+trironkk.personal.ExampleAspect.after
