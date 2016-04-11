@@ -18,21 +18,21 @@ public class ExampleAspect {
 
     @Before("exampleMethod()")
     public void before(JoinPoint joinPoint) {
-        System.out.println(joinPoint);
+        System.out.println("trironkk.personal.ExampleAspect.before");
     }
  
     @Around("exampleMethod()")
     public void around(ProceedingJoinPoint joinPoint) throws Throwable {
-        System.out.println(joinPoint);
+        System.out.println("trironkk.personal.ExampleAspect.around BEFORE");
+
         System.out.println("Arguments : " + Arrays.toString(joinPoint.getArgs()));
-        
         joinPoint.proceed();
 
-        System.out.println(joinPoint);
+        System.out.println("trironkk.personal.ExampleAspect.around AFTER");
     }
 
     @After("exampleMethod()")
     public void after(JoinPoint joinPoint) {
-        System.out.println(joinPoint);
+        System.out.println("trironkk.personal.ExampleAspect.after");
     }
 }
