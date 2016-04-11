@@ -13,15 +13,15 @@ import org.aspectj.lang.ProceedingJoinPoint;
 
 @Aspect
 public class ExampleAspect {
-    @Pointcut("@annotation(trironkk.personal.ExampleAnnotation)")
+    @Pointcut("execution(* *(..)) && @annotation(trironkk.personal.ExampleAnnotation)")
     public void exampleMethod() {}
 
-    @Before("exampleMethod()")
+    @Before("execution(* *(..)) && exampleMethod()")
     public void before(JoinPoint joinPoint) {
         System.out.println("trironkk.personal.ExampleAspect.before");
     }
  
-    @Around("exampleMethod()")
+    @Around("execution(* *(..)) && exampleMethod()")
     public void around(ProceedingJoinPoint joinPoint) throws Throwable {
         System.out.println("trironkk.personal.ExampleAspect.around BEFORE");
 
@@ -31,7 +31,7 @@ public class ExampleAspect {
         System.out.println("trironkk.personal.ExampleAspect.around AFTER");
     }
 
-    @After("exampleMethod()")
+    @After("execution(* *(..)) && exampleMethod()")
     public void after(JoinPoint joinPoint) {
         System.out.println("trironkk.personal.ExampleAspect.after");
     }
